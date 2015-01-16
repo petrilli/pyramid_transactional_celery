@@ -30,3 +30,33 @@ Features
 * If the transaction is aborted, then the tasks will never be called.
 * If the transaction is committed, the tasks will go through their normal
   ``apply_async`` process and be queued for processing.
+
+Usage
+-----
+
+Using the library is a relatively easy thing to do. First, you'll need to
+integrate Celery into your Pyramid application, for which I recommend using 
+pyramid_celery_. Once that's done, you simply need to start creating your
+tasks. The big difference is for function-based tasks, you use a different
+decorator::
+
+    from pyramid_transactional_celery import task_tm
+    
+    @task_tm
+    def add(x, y):
+        """Add two numbers together."""
+        return x + y
+
+That's all there is to it. For class-based tasks, you simply need to
+subclass ``TransactionalTask`` instead of ``Task``::
+
+    from pyramid_transactional_celery import TransactionalTask
+    
+    class SampleTask(TransactionalTask):
+        """A sample task that is transactional."""
+        def run(x, y):
+            return x + y
+
+That's it. Bob's your uncle.
+
+.. _pyramid_celery: https://pypi.python.org/pypi/pyramid_celery/

@@ -1,6 +1,6 @@
-===============================
+================================
 Transactional Celery for Pyramid
-===============================
+================================
 
 .. image:: https://badge.fury.io/py/pyramid_transactional_celery.png
     :target: http://badge.fury.io/py/pyramid_transactional_celery

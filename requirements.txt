@@ -1,3 +1,3 @@
 wheel==0.23.0
 transaction
-celery
+celery >= 3.1

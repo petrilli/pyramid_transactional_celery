@@ -48,7 +48,9 @@ Using the library is a relatively easy thing to do. First, you'll need to
 integrate Celery into your Pyramid application, for which I recommend using
 pyramid_celery_. Once that's done, you simply need to start creating your
 tasks. The big difference is for function-based tasks, you use a different
-decorator::
+decorator:
+
+.. code-block:: python
 
     from pyramid_transactional_celery import task_tm
 
@@ -58,7 +60,9 @@ decorator::
         return x + y
 
 That's all there is to it. For class-based tasks, you simply need to
-subclass ``TransactionalTask`` instead of ``Task``::
+subclass ``TransactionalTask`` instead of ``Task``:
+
+.. code-block:: python
 
     from pyramid_transactional_celery import TransactionalTask
 

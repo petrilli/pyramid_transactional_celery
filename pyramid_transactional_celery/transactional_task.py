@@ -84,9 +84,6 @@ class CeleryDataManager(object):
     abort = tpc_abort
 
 
-celery_data_manager = CeleryDataManager()
-
-
 class TransactionalTask(Task):
     """A task whose execution is delayed until after the current transaction.
     """

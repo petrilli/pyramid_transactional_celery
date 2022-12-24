@@ -1,3 +1,4 @@
-wheel==0.23.0
+wheel==0.38.0
 transaction
 celery >= 3.1
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
